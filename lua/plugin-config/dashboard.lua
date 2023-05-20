@@ -52,7 +52,7 @@ db.setup({
         footer = {
             "",
             "",
-            "https://github.com/EvilChan/nvim-config.git",
+            "https://github.com/EvilChan/neovim-config-lua.git",
         },
     },
 })
