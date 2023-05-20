@@ -4,6 +4,8 @@ if not status then
     return
 end
 
+local version = vim.version()
+
 db.setup({
     theme = 'doom',
     config = {
@@ -18,7 +20,9 @@ db.setup({
             [[ ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
             [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
             [[                                                   ]],
-            [[                [ version : 1.0.0 ]                ]],
+            [[                [ version : ]] ..
+            tostring(version.api_compatible) .. "." ..
+            tostring(version.minor) .. "." .. tostring(version.patch) .. [[ ]                ]],
             [[]],
             [[]],
             [[]],
