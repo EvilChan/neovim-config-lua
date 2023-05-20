@@ -14,7 +14,7 @@ bufferline.setup({
         -- 使用 nvim 内置 lsp
         diagnostics = "nvim_lsp",
         -- 自定义缓冲区指示符
-        diagnostics_indicator = function (_, _, diagnostics_dict, _)
+        diagnostics_indicator = function(_, _, diagnostics_dict, _)
             local s = ''
             for e, n in pairs(diagnostics_dict) do
                 local sym = e == "error" and " " or (e == "warning" and " " or "")
@@ -23,11 +23,11 @@ bufferline.setup({
             return s
         end,
         -- 左侧让出 nvim-tree 的位置
-        offsets = {{
+        offsets = { {
             filetype = "NvimTree",
             text = "File Explorer",
             highlight = "Directory",
             text_align = "left",
-        }}
+        } }
     }
 })

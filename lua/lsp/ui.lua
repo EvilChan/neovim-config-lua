@@ -17,36 +17,37 @@ lspkind.init({
     --
     -- default: {}
     symbol_map = {
-      Text = "󰉿",
-      Method = "󰆧",
-      Function = "󰊕",
-      Constructor = "",
-      Field = "󰜢",
-      Variable = "󰀫",
-      Class = "󰠱",
-      Interface = "",
-      Module = "",
-      Property = "󰜢",
-      Unit = "󰑭",
-      Value = "󰎠",
-      Enum = "",
-      Keyword = "󰌋",
-      Snippet = "",
-      Color = "󰏘",
-      File = "󰈙",
-      Reference = "󰈇",
-      Folder = "󰉋",
-      EnumMember = "",
-      Constant = "󰏿",
-      Struct = "󰙅",
-      Event = "",
-      Operator = "󰆕",
-      TypeParameter = "",
+        Text = "󰉿",
+        Method = "󰆧",
+        Function = "󰊕",
+        Constructor = "",
+        Field = "󰜢",
+        Variable = "󰀫",
+        Class = "󰠱",
+        Interface = "",
+        Module = "",
+        Property = "󰜢",
+        Unit = "󰑭",
+        Value = "󰎠",
+        Enum = "",
+        Keyword = "󰌋",
+        Snippet = "",
+        Color = "󰏘",
+        File = "󰈙",
+        Reference = "󰈇",
+        Folder = "󰉋",
+        EnumMember = "",
+        Constant = "󰏿",
+        Struct = "󰙅",
+        Event = "",
+        Operator = "󰆕",
+        TypeParameter = "",
     },
 })
 
 local lspsaga = require("lspsaga")
-lspsaga.setup({ -- defaults ...
+lspsaga.setup({
+                -- defaults ...
     debug = false,
     use_saga_diagnostic_sign = true,
     -- diagnostic sign
@@ -106,7 +107,7 @@ M.formatting = {
         mode = 'symbol_text',
         maxwidth = 50,
         ellipsis_char = '...',
-        before = function (entry, vim_item)
+        before = function(entry, vim_item)
             -- Source 显示提示来源
             vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
             return vim_item

@@ -7,4 +7,3 @@ end
 lsp_file_operations.setup({
     debug = false,
 })
-

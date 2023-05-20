@@ -121,12 +121,12 @@ pluginKeys.telescopeList = {
 }
 
 -- nvim-cmp 自动补全
-pluginKeys.cmp = function (cmp)
-    local feedkey = function (key, mode)
+pluginKeys.cmp = function(cmp)
+    local feedkey = function(key, mode)
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
     end
 
-    local has_words_before = function ()
+    local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -155,19 +155,19 @@ pluginKeys.cmp = function (cmp)
         ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         -- snippets 跳转
-        ["<C-l>"] = cmp.mapping(function ()
+        ["<C-l>"] = cmp.mapping(function()
             if vim.fn["vsnip#available"](1) == 1 then
                 feedkey("<Plug>(vsnip-expand-or-jump)", "")
             end
         end, { "i", "s" }),
-        ["<C-h>"] = cmp.mapping(function ()
+        ["<C-h>"] = cmp.mapping(function()
             if vim.fn["vsnip#jumpable"](-1) == 1 then
                 feedkey("<Plug>(vsnip-jump-prev)", "")
             end
         end, { "i", "s" }),
 
         -- super Tab
-        ["<Tab>"] = cmp.mapping(function (fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif vim.fn["vsnip#available"](1) == 1 then
@@ -178,7 +178,7 @@ pluginKeys.cmp = function (cmp)
                 fallback()
             end
         end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function ()
+        ["<S-Tab>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif vim.fn["vsnip#jumpable"](-1) == 1 then
@@ -195,7 +195,7 @@ end
 -- <leader>tb 下方
 -- 特殊lazygit窗口，需要安装lazygit
 -- <leader>tg lazygit
-pluginKeys.mapToggleTerm = function (toggleterm)
+pluginKeys.mapToggleTerm = function(toggleterm)
     vim.keymap.set({ "n", "t" }, "<leader>tf", toggleterm.toggleF)
     vim.keymap.set({ "n", "t" }, "<leader>tl", toggleterm.toggleL)
     vim.keymap.set({ "n", "t" }, "<leader>tj", toggleterm.toggleJ)

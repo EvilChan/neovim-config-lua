@@ -58,7 +58,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
 -- smaller updatetime
--- --vim.o.updatetime = 300
+vim.o.updatetime = 300
 -- 等待mappings
 vim.o.timeoutlen = 500
 -- split window 从下边和右边出现
@@ -67,10 +67,10 @@ vim.o.splitright = true
 -- 自动补全不自动选中
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
--- -- 补全增强
--- --vim.o.wildmenu = true
--- -- Don't pass messages to | ins-completin menu |
--- --vim.o.shortmess = vim.o.shortmess .. 'c'
--- --vim.o.pumheight = 10
+-- 补全增强
+vim.o.wildmenu = true
+-- Don't pass messages to | ins-completin menu |
+vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.pumheight = 10
 -- 永远显示 tabline
 --vim.o.showtabline = 2

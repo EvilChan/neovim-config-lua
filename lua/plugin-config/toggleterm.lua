@@ -5,7 +5,7 @@ if not status then
 end
 
 toggleterm.setup({
-    size = function (term)
+    size = function(term)
         if term.direction == "horizontal" then
             return 15
         elseif term.direction == "vertical" then
@@ -24,7 +24,7 @@ local lazygit = Terminal:new({
     float_opts = {
         border = "double",
     },
-  flon_open = function (term)
+    on_open = function(term)
         vim.cmd("startinsert!")
         -- q / <leader>tg 关闭 terminal
         vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
@@ -34,7 +34,7 @@ local lazygit = Terminal:new({
             vim.api.nvim_del_keymap("t", "<Esc>")
         end
     end,
-    on_close = function ()
+    on_close = function()
         -- 添加回来
         vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
     end,
@@ -57,7 +57,7 @@ local tj = Terminal:new({
 
 local M = {}
 
-M.toggleF = function ()
+M.toggleF = function()
     if tf:is_open() then
         tf:close()
         return
@@ -67,7 +67,7 @@ M.toggleF = function ()
     tf:open()
 end
 
-M.toggleL = function ()
+M.toggleL = function()
     if tl:is_open() then
         tl:close()
         return
@@ -77,7 +77,7 @@ M.toggleL = function ()
     tl:open()
 end
 
-M.toggleJ = function ()
+M.toggleJ = function()
     if tj:is_open() then
         tj:close()
         return
@@ -87,7 +87,7 @@ M.toggleJ = function ()
     tj:open()
 end
 
-M.toggleG = function ()
+M.toggleG = function()
     lazygit:toggle()
 end
 

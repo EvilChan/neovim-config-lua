@@ -29,7 +29,7 @@ nvim_tree.setup({
             -- 首次打开大小适配
             resize_window = true,
             -- 打开文件时关闭tree
-            quit_on_open = true,
+            quit_on_open = false,
         },
     },
 })

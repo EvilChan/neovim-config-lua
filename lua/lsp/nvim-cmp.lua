@@ -3,7 +3,7 @@ local cmp = require("cmp")
 cmp.setup({
     -- 指定 snippet 引擎
     snippet = {
-        expand = function (args)
+        expand = function(args)
             -- For `vsnip` users.
             vim.fn["vsnip#anonymous"](args.body)
         end,
