@@ -74,3 +74,17 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- 永远显示 tabline
 --vim.o.showtabline = 2
+
+-- 使用 windows 剪贴板
+vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+        ["+"] = "clip.exe",
+        ["*"] = "clip.exe",
+    },
+    paste = {
+        ["+"] = 'powershell.exe -c [Console]::Out::Write($(Get-Clipboard -Raw).toString().replace("`r", ""))',
+        ["*"] = 'powershell.exe -c [Console]::Out::Write($(Get-Clipboard -Raw).toString().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+}
