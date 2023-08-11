@@ -1,4 +1,4 @@
 # neovim-config-lua
 
-myself neovim config
+最基础的neovim配置，非开发使用
 
